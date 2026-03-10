@@ -6,6 +6,7 @@ namespace OOPApp3
     {
         static void Main(string[] args)
         {
+            #region Part01
             #region Question01
             //a) Composition – The departments depend completely on the university,
             //so if the university is closed the departments no longer exist.
@@ -31,7 +32,10 @@ namespace OOPApp3
 
             //d) Yes, you can create an object from a sealed class using new,
             //because sealing only prevents inheritance. 
+            #endregion 
             #endregion
+
+
         }
     }
 }
