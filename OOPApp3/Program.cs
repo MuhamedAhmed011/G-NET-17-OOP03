@@ -32,9 +32,43 @@ namespace OOPApp3
 
             //d) Yes, you can create an object from a sealed class using new,
             //because sealing only prevents inheritance. 
-            #endregion 
+            #endregion
             #endregion
 
+            #region Part02
+            Cinema cinema = new Cinema("IMAX Cinema");
+
+            cinema.OpenCinema();
+            Console.WriteLine();
+
+            Ticket t1 = new StandardTicket("Inception", 120, "A-5");
+            Ticket t2 = new VIPTicket("Avengers", 200, true);
+            Ticket t3 = new IMAXTicket("Dune", 180, false);
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);
+            cinema.AddTicket(t3);
+
+            Console.WriteLine("---------- All Tickets ----------");
+            cinema.PrintAllTickets();
+
+            Console.WriteLine();
+            Console.WriteLine("---------- Statistics ----------");
+
+            Console.WriteLine("Total Tickets Created: " + Ticket.GetTotalTickets());
+            Console.WriteLine();
+
+            Console.WriteLine("Booking Ref 1: " + BookingHelper.GenerateBookingReference());
+            Console.WriteLine("Booking Ref 2: " + BookingHelper.GenerateBookingReference());
+
+            Console.WriteLine();
+
+            double discount = BookingHelper.CalcGroupDiscount(5, 100);
+            Console.WriteLine("Group Discount (5 × 100 EGP): " + discount + " EGP");
+
+            Console.WriteLine();
+            cinema.CloseCinema(); 
+            #endregion
 
         }
     }
